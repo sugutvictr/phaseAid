@@ -120,13 +120,35 @@
                 <div class="about-me pt-4 pt-md-0">
                   <div class="title-box-2">
                     <h5 class="title-left">
-                    AI Tool
+                    VET AI Tool
                     </h5>
                   </div>
                   <p class="lead">
-                    the content
+                  	<?php $string = 'abcdefghijklmnopqrstuvwxyz1234567890';
+$alpha1=$string[mt_rand(0, strlen($string) - 1)];
+$alpha2=$string[mt_rand(0, strlen($string) - 1)];
+$alpha3=$string[mt_rand(0, strlen($string) - 1)];
+$alpha4=$string[mt_rand(0, strlen($string) - 1)];
+$alpha5=$string[mt_rand(0, strlen($string) - 1)];
+$alpha6=$string[mt_rand(0, strlen($string) - 1)];
+$bacid1="$alpha1$alpha2$alpha3$alpha4$alpha5$alpha6";
+?>
+                    <form method="POST" action="loadCs.php">
+                    	<input type="hidden" name="csref" value="<?php echo $bacid1;?>">
+                    	Clinical Sign <input type="text" name="csdesc" value="">
+                    	<input type="submit" name="submit" value="PUT">
+                    </form>
                   </p>
-                  
+                  <input type="button" value="View Diseases" onclick="loadDs();" />
+                  <Script> function loadDs() {
+                  	window.location.assign('dslist.php');
+                  }
+                  </Script> <br />
+                  <input type="button" value="View Clinical Signs" onclick="loadCs();" />
+                  <Script> function loadCs() {
+                  	window.location.assign('cslist.php');
+                  }
+                  </Script>
                 </div>
               </div>
             </div>
